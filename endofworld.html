@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div id='one'></div>
+</body>
+<script type="text/javascript">
+var divOne = document.getElementById('one')
+var textOne = `Which is why they both missed
+it: they were looking the wrong way—toward water—and all the while it was coming down the road.
+Four. Riding close together, bunched-up like, and righteous. He was going to tell him that, because he
+thought it was important: why he and Baby Suggs both missed it. And about the party too, because that
+explained why nobody ran on ahead; why nobody sent a fleet-footed son to cut ’cross a field soon as they
+saw the four horses in town hitched for watering while the riders asked questions. Not Ella, not John, not
+anybody ran down or to Bluestone Road, to say some new whitefolks with the Look just rode in. The
+righteous Look every Negro learned to recognize along with his ma’am’s tit. Like a flag hoisted, this
+righteousness telegraphed and announced the faggot, the whip, the fist, the lie, long before it went public.
+Nobody warned them, and he’d always believed it wasn’t the exhaustion from a long day’s gorging that
+dulled them, but some other thing—like, well, like meanness—that let them stand aside, or not pay
+attention, or tell themselves somebody else was probably bearing the news already to the house on
+Bluestone Road where a pretty woman had been living for almost a month.`
+
+var temperature = "empty temp here"
+
+async function api() {
+
+    const response = await fetch('http://api.worldbank.org/v2/region/AFR?format=json');
+    temperature = await response.json();
+    console.log("temp json response "+ temperature);
+    temperature = temperature[[0[0]].code]
+     //temperature = await temperature.main.temp;
+    console.log("temperature.id "+ temperature);
+    return temperature
+}
+console.log(temperature)
+api()
+
+
+function ihatethis(){
+if (temperature > 40){
+  console.log("finaly");
+  divOne.innerHTML = textOne
+} else {
+  divOne.innerHTML = "nah G"
+}
+}
+//function poodaddy(){console.log(boobs)}
+setTimeout(ihatethis,200)
+
+
+
+//console.log(test())
+
+
+</script>
+</html>
